@@ -439,6 +439,15 @@ class ClientImpl implements IClient
         @stream_socket_shutdown($this->socket, STREAM_SHUT_RDWR);
     }
 
+	/**
+	 * Checks if socket is resource.
+	 *
+	 * @return bool
+	 */
+	public function hasWorkingSocket(): bool {
+		return is_resource($this->socket);
+	}
+
     /**
      * Sets the logger implementation.
      *
